@@ -1,0 +1,11 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+   <div class="jumbotron container m-20">
+        <strong class="display-1 lead">{{blog.title}}</strong>
+        <br>
+        <p class="lead">{{blog.body|safe}}</p>
+        <br>
+   </div>
+{% endblock content %}
+    

@@ -1,0 +1,62 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}
+    Kushal
+{% endblock title %}
+    
+{% block content %}
+    <br>
+    <br>
+    {% load static %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center pt-5">
+                    <p class="lead"><strong>Mr.Kushal Subedi</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <img src="{% static 'portfolio/images/myprofile.jpg' %}" class="img-fluid rounded mx-auto d-block" alt="Profile"height="300px" width="300px">
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col text-center py-5">
+                      <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut
+                          iure itaque quibusdam rem accusantium
+                          deserunt reprehenderit sunt minus.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <hr class="border-2px container">
+      <section>
+          <div class="row">
+              <div class="col text-center py-5">
+                  <p class="lead display-4"> <strong>Projects</strong> </p>
+              </div>
+          </div>
+      </section>
+
+    <section> 
+        <div class="container">
+            <div class="card-deck row no-gutters">
+                {% for project  in projects %}
+                <div class="col-md-3 d-flex mt-1">
+                    <div class="card ">
+                        <img src="{{project.image.url}}" alt="images" height="200px" width="25%"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{project.title}}</h5>
+                            <p class="card-text">{{project.description}}</p>
+                            <a href="#" class="btn btn-primary">Go to</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+    

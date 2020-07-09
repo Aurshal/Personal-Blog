@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}
+    Blog
+{% endblock title %}
+    
+{% block content %}
+    <div class="jumbotron container mt-20">
+        <h1>This is my personal blog page.</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                {% for blog in blogs %}
+                <h4 class="card-header">{{blog.created|date:'Y-m-d'}}</h4>
+                <h1 class="card-title">{{blog.title}}</h4>
+                    <p class="card-text">{{blog.body|striptags|truncatewords:10}}</p>
+                    <button class="btn btn-outline-info"><a href="{% url 'blog:blog_detail' blog.id %}">See Detail</a></button>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    
